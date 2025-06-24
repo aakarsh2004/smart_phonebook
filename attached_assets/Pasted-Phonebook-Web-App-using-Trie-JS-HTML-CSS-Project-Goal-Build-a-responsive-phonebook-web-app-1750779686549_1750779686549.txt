@@ -1,0 +1,104 @@
+Phonebook Web App using Trie (JS, HTML, CSS)
+🧠 Project Goal:
+Build a responsive phonebook web app that stores contacts in a Trie data structure and allows fast, intuitive search (auto-suggest as you type, typo-tolerant), with the ability to add, delete, edit, and call contacts. All features are handled in pure frontend — no React, no backend.
+
+🧩 Features to Implement:
+📇 Contact Storage (Using Trie)
+Store contact names and numbers in a Trie.
+
+Trie allows:
+
+Prefix-based search (auto-complete).
+
+Typo-tolerant suggestions (e.g., small spelling error correction).
+
+Start with predefined contacts hardcoded in JS.
+
+🔍 Search
+Live search bar.
+
+As the user types, auto-suggest contacts using the Trie.
+
+Show results in a styled dropdown or list.
+
+➕📝🔄 CRUD Operations
+Add Contact: Input name & number, inserts into Trie and displays in contact list.
+
+Edit Contact: Click edit icon/button → prefill inputs → save changes.
+
+Delete Contact: Remove contact from list and Trie.
+
+Data can be stored in-memory (no need for backend or localStorage).
+
+📞 Call Simulation
+When a user clicks on a contact, show a popup modal:
+
+Display name, number.
+
+Show “📞 Calling...” animation.
+
+After 10–20 seconds, show “❌ Call ended” or allow user to manually end call.
+
+Can be a fun, animated modal/dialog.
+
+🎨 User Interface (HTML/CSS/JS Only)
+Clean, modern UI (use CSS transitions, modals, icons, etc.).
+
+Contact list UI like a real phone contact list.
+
+Responsive for mobile and desktop.
+
+Buttons for add/edit/delete.
+
+Optionally use icon libraries like Font Awesome or Boxicons.
+
+📂 Suggested Folder Structure
+pgsql
+Copy
+Edit
+📁 phonebook-app/
+  ├── index.html
+  ├── style.css
+  └── script.js
+🔧 Bonus Features (Optional)
+Local storage save/load contacts.
+
+Search with fuzzy match (edit distance).
+
+Dark/light theme toggle.
+
+Call log history.
+
+🧑‍💻 Suggested Workflow:
+Implement and test the Trie in script.js.
+
+Build the HTML skeleton (search bar, contact list, buttons).
+
+Add CSS for layout and animations (popup, list transitions).
+
+Connect JS to HTML/CSS for search, edit, add, delete, call.
+
+Polish UI and add mobile responsiveness.
+
+If you'd like, I can now give you:
+
+📦 Starter code (index.html, style.css, script.js)
+
+🧠 Trie implementation in JS
+
+💡 UI mockup (design idea)
+
+🧪 Live demo setup
+
+Would you like any of these now?
+
+
+
+
+
+
+
+
+You said:
+
+more featuere that can add and impressintervieer 
