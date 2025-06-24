@@ -74,6 +74,7 @@ export function SearchPanel({
     
     return {
       all: contacts.length,
+      favorites: contacts.filter(c => c.favorite).length,
       ...counts,
     };
   };
@@ -148,6 +149,13 @@ export function SearchPanel({
             All <span className="ml-1 bg-background/20 px-1 rounded text-xs">{tagCounts.all}</span>
           </Badge>
           <Badge
+            variant={activeFilter === 'favorites' ? 'default' : 'secondary'}
+            className="cursor-pointer"
+            onClick={() => onFilterByTag('favorites')}
+          >
+            ⭐ Favorites <span className="ml-1 bg-background/20 px-1 rounded text-xs">{tagCounts.favorites || 0}</span>
+          </Badge>
+          <Badge
             variant={activeFilter === 'family' ? 'default' : 'secondary'}
             className="cursor-pointer"
             onClick={() => onFilterByTag('family')}
@@ -167,6 +175,13 @@ export function SearchPanel({
             onClick={() => onFilterByTag('friends')}
           >
             Friends <span className="ml-1 bg-background/20 px-1 rounded text-xs">{tagCounts.friends || 0}</span>
+          </Badge>
+          <Badge
+            variant={activeFilter === 'other' ? 'default' : 'secondary'}
+            className="cursor-pointer"
+            onClick={() => onFilterByTag('other')}
+          >
+            Other <span className="ml-1 bg-background/20 px-1 rounded text-xs">{tagCounts.other || 0}</span>
           </Badge>
         </div>
       </div>

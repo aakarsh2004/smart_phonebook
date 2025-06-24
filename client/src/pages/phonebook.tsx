@@ -44,7 +44,9 @@ export default function Phonebook() {
     }
 
     // Apply tag filter
-    if (activeFilter !== 'all') {
+    if (activeFilter === 'favorites') {
+      filtered = filtered.filter(contact => contact.favorite);
+    } else if (activeFilter !== 'all') {
       filtered = filtered.filter(contact => contact.tag === activeFilter);
     }
 

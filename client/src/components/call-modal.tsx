@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { PhoneOff, Mic, MicOff, Volume2 } from 'lucide-react';
+import { PhoneOff, Mic, MicOff, Volume2, Phone } from 'lucide-react';
 import { Dialog, DialogContent } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
 import { Contact } from '@shared/schema';
