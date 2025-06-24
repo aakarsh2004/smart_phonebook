@@ -7,8 +7,8 @@ export const contactSchema = z.object({
   email: z.string().email().optional(),
   tag: z.enum(["work", "family", "friends", "other"]),
   favorite: z.boolean().default(false),
-  createdAt: z.date().default(() => new Date()),
-  lastCalled: z.date().optional(),
+  createdAt: z.union([z.date(), z.string()]).default(() => new Date()),
+  lastCalled: z.union([z.date(), z.string()]).optional(),
 });
 
 export const insertContactSchema = contactSchema.omit({
@@ -20,7 +20,7 @@ export const callLogSchema = z.object({
   id: z.number(),
   contactId: z.number(),
   duration: z.number(), // in seconds
-  timestamp: z.date(),
+  timestamp: z.union([z.date(), z.string()]),
   type: z.enum(["outgoing", "incoming", "missed"]),
 });
 
