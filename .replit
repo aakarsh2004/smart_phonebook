@@ -19,7 +19,7 @@ localPort = 8000
 externalPort = 8000
 
 [workflows]
-runButton = "Project"
+runButton = "Static Server"
 
 [[workflows.workflow]]
 name = "Project"
@@ -38,3 +38,12 @@ author = "agent"
 task = "shell.exec"
 args = "npm run dev"
 waitForPort = 5000
+
+[[workflows.workflow]]
+name = "Static Server"
+author = 41994548
+mode = "sequential"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "npx serve . -p 5000"
