@@ -19,6 +19,11 @@ export default function Phonebook() {
   const [contacts, setContacts] = useLocalStorage<Contact[]>('phonebook-contacts', DEFAULT_CONTACTS);
   const [callLogs, setCallLogs] = useLocalStorage<CallLog[]>('phonebook-call-logs', []);
   
+  // Debug: Log contact count on load
+  useEffect(() => {
+    console.log(`Loaded ${contacts.length} contacts from storage`);
+  }, [contacts.length]);
+  
   const [searchQuery, setSearchQuery] = useState('');
   const [activeFilter, setActiveFilter] = useState('all');
   const [showContactModal, setShowContactModal] = useState(false);

@@ -48,7 +48,7 @@ export function ContactList({
     <div className="bg-card rounded-xl shadow-sm border">
       <div className="p-6 border-b">
         <div className="flex justify-between items-center">
-          <h2 className="text-lg font-semibold">Contacts</h2>
+          <h2 className="text-lg font-semibold">Contacts ({contacts.length})</h2>
           <div className="flex items-center space-x-2">
             <Button
               variant="ghost"
@@ -148,13 +148,7 @@ export function ContactList({
         )}
       </div>
 
-      {contacts.length > 10 && (
-        <div className="p-4 text-center border-t">
-          <Button variant="ghost" className="text-primary">
-            Load More Contacts
-          </Button>
-        </div>
-      )}
+      
     </div>
   );
 }

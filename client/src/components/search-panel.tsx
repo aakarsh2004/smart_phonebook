@@ -194,8 +194,8 @@ export function SearchPanel({
       <div className="pt-6 border-t">
         <div className="grid grid-cols-2 gap-4 text-center mb-4">
           <div>
-            <div className="text-2xl font-bold">{contacts.length}</div>
-            <div className="text-xs text-muted-foreground">Total Contacts</div>
+            <div className="text-3xl font-bold text-blue-600">{contacts.length}</div>
+            <div className="text-sm font-medium text-muted-foreground">Total Contacts</div>
           </div>
           <div>
             <div className="text-2xl font-bold">
