@@ -2,23 +2,17 @@
 
 ## Overview
 
-This is a modern, full-stack phonebook application built with React (frontend) and Express.js (backend). The application implements advanced features including a Trie-based search algorithm for lightning-fast contact lookups, voice search capabilities, and a comprehensive contact management system. It uses PostgreSQL for persistent data storage via Drizzle ORM and features a clean, responsive UI built with shadcn/ui components and Tailwind CSS.
+This is a modern phonebook application built with pure vanilla JavaScript, HTML, and CSS. The application implements advanced features including a Trie-based search algorithm for lightning-fast contact lookups, voice search capabilities using Web Speech API, and a comprehensive contact management system. Data is stored in browser localStorage and features a clean, responsive UI with dark/light theme support.
 
 ## System Architecture
 
 ### Frontend Architecture
-- **Framework**: React with TypeScript
-- **Build Tool**: Vite for fast development and optimized builds
-- **Routing**: Wouter for lightweight client-side routing
-- **State Management**: TanStack Query for server state management, React hooks for local state
-- **Styling**: Tailwind CSS with shadcn/ui component library
-- **UI Components**: Comprehensive set of accessible components from Radix UI primitives
-
-### Backend Architecture
-- **Framework**: Express.js with TypeScript
-- **Module System**: ES Modules for modern JavaScript support
-- **Development**: TSX for TypeScript execution in development
-- **Production**: ESBuild for fast, optimized bundling
+- **Language**: Pure vanilla JavaScript (ES6+)
+- **Markup**: Semantic HTML5
+- **Styling**: Custom CSS with CSS Variables for theming
+- **Icons**: Font Awesome 6.0 for consistent iconography
+- **Fonts**: Google Fonts (Roboto) for typography
+- **Storage**: Browser localStorage for data persistence
 
 ## Key Components
 
@@ -37,67 +31,81 @@ This is a modern, full-stack phonebook application built with React (frontend) a
 
 ### Advanced Features
 - **Voice Search**: Web Speech API integration for hands-free contact searching
-- **Call Simulation**: Modal-based calling interface with duration tracking and call state management
+- **Call Simulation**: Realistic call interface with duration tracking, mute, and speaker controls
 - **Data Export/Import**: JSON-based contact backup and restore functionality
-- **Theme System**: Light/dark mode toggle with system preference detection
+- **Theme System**: Light/dark mode toggle with localStorage persistence
+- **Real-time Search**: Trie-based instant search with auto-suggestions
+- **Contact Management**: Full CRUD operations with favorites system
+- **Responsive Design**: Mobile-first approach with touch-friendly interactions
 
-### Database Schema
-Located in `shared/schema.ts`, defines:
-- **Contact Schema**: Core contact information with validation via Zod
-- **Call Log Schema**: Track call history with duration, timestamp, and call type
-- **Type Safety**: TypeScript types generated from Zod schemas for end-to-end type safety
+### Data Structure
+JavaScript objects with the following schemas:
+- **Contact Object**: id, name, phone, email, tag, favorite, createdAt, lastCalled
+- **Call Log Object**: id, contactId, duration, timestamp, type
+- **Storage**: All data persisted in browser localStorage with JSON serialization
 
 ## Data Flow
 
-1. **Contact Storage**: Contacts stored in PostgreSQL via Drizzle ORM
-2. **Trie Indexing**: Client-side Trie built from contacts for fast searching
-3. **Real-time Search**: User input triggers Trie search with instant results
-4. **State Synchronization**: Local storage backup with server synchronization
-5. **Voice Input**: Speech API converts voice to text for search queries
+1. **Contact Storage**: Contacts stored in browser localStorage
+2. **Trie Indexing**: Client-side Trie data structure built from contacts for O(m) search complexity
+3. **Real-time Search**: User input triggers Trie search with instant results and suggestions
+4. **State Management**: Application state managed in JavaScript class with localStorage persistence
+5. **Voice Input**: Web Speech API converts voice to text for hands-free search
 
 ## External Dependencies
 
 ### Core Dependencies
-- **Database**: PostgreSQL with Neon serverless driver
-- **ORM**: Drizzle ORM for type-safe database operations
-- **UI Framework**: React with comprehensive Radix UI component set
-- **Form Handling**: React Hook Form with Zod validation
-- **Date Handling**: date-fns for date formatting and manipulation
+- **Font Awesome**: Icons and visual elements (CDN)
+- **Google Fonts**: Roboto font family for typography (CDN)
+- **Web Speech API**: Browser native voice recognition
+- **localStorage API**: Browser native data persistence
 
-### Development Tools
-- **Build System**: Vite with React plugin and runtime error overlay
-- **TypeScript**: Full type safety across client and server
-- **Tailwind CSS**: Utility-first CSS framework with PostCSS
-- **ESLint Integration**: Code quality and consistency enforcement
+### No Build Tools Required
+- **Pure JavaScript**: No transpilation or bundling needed
+- **Vanilla CSS**: Custom CSS with modern features (Grid, Flexbox, Variables)
+- **HTML5**: Semantic markup with modern form controls
+- **Progressive Enhancement**: Works in all modern browsers
 
 ## Deployment Strategy
 
 ### Development Environment
-- **Runtime**: Node.js 20 with ESM support
-- **Database**: PostgreSQL 16 for local development
-- **Hot Reload**: Vite dev server with HMR for rapid development
-- **Port Configuration**: Server runs on port 5000 with external port 80
+- **Static Files**: Direct file serving from file system
+- **No Build Process**: Files can be opened directly in browser
+- **Hot Reload**: Native browser refresh for development
+- **Port Configuration**: Express serves static files on port 5000
 
-### Production Build
-- **Client Build**: Vite builds optimized static assets to `dist/public`
-- **Server Build**: ESBuild bundles server code to `dist/index.js`
-- **Deployment Target**: Replit Autoscale for automatic scaling
-- **Static Assets**: Served by Express in production mode
+### Production Deployment
+- **Static Hosting**: Can be deployed to any static hosting service
+- **File Structure**: index.html, style.css, script.js in root directory
+- **CDN Dependencies**: Font Awesome and Google Fonts served from CDN
+- **Browser Compatibility**: Modern browsers with Web Speech API support
 
-### Database Management
-- **Migrations**: Drizzle-kit handles schema migrations
-- **Environment**: DATABASE_URL environment variable for connection
-- **Schema**: Centralized in `shared/schema.ts` for consistency
+### File Management
+- **No Database**: All data stored in browser localStorage
+- **Import/Export**: JSON file-based backup and restore
+- **Version Control**: Simple three-file structure easy to maintain
 
 ## Changelog
 
 ```
 Changelog:
-- June 24, 2025. Initial setup
+- June 24, 2025: Initial React/TypeScript implementation
+- June 24, 2025: Complete rewrite to vanilla JavaScript/HTML/CSS
+  - Implemented Trie data structure for fast search
+  - Added Web Speech API for voice search
+  - Created responsive design with dark/light themes
+  - Added realistic call simulation with controls
+  - Implemented localStorage data persistence
+  - Added 48 diverse Indian contacts with proper formatting
+  - Created comprehensive CRUD operations
+  - Added import/export functionality
 ```
 
 ## User Preferences
 
 ```
 Preferred communication style: Simple, everyday language.
+Technology preference: Vanilla JavaScript, HTML, CSS only - no frameworks or backend.
+Contact data: Indian phone numbers with +91 country code.
+Features required: Voice search, dark/light themes, Trie-based search, call simulation.
 ```
